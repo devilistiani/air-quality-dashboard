@@ -18,7 +18,7 @@ def create_station_pm25_df(df):
     station_pm25_df = df.groupby("station")["PM2.5"].mean().sort_values(ascending=False).reset_index()
     return station_pm25_df
 
-all_df = pd.read_csv("main_data.csv")
+all_df = pd.read_csv("main_data.zip")
 all_df["datetime"] = pd.to_datetime(all_df["datetime"])
 all_df.sort_values(by="datetime", inplace=True)
 all_df.reset_index(inplace=True)
